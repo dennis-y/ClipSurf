@@ -11,7 +11,7 @@ To use:
 ```
 php -S localhost:8000
 ```
-3. Open `localhost:8000/path/to/index.php?folder=/path/to/media/folder/` in your favorite web browser.
+3. Open `localhost:8000/path/to/index.php?folder=/path/to/media/folder/` in your favorite web browser. (The first load will take a while because it's generating thumbnails for all the videos.)
 
 Note that both paths are relative to your home folder. For example, say you downloaded this project to `/home/code/ClipSurf/` and you want to view `/home/documents/images/`. You would open the following page in your browser: `localhost:8000/code/ClipSurf/index.php?folder=/documents/images/`.
 
