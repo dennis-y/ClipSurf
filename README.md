@@ -1,6 +1,8 @@
 # ClipSurf
 A minimalist browser based gallery that displays all the images and videos in a local folder.
 
+![Screenshot](https://user-images.githubusercontent.com/3581229/237789627-eb37d3f2-169e-4b33-a243-4e44721a2bf6.png)
+
 To use:
 
 1. Install PHP 5+ and FFmpeg. 
