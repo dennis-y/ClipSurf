@@ -1,0 +1,39 @@
+body {
+    background-color: #dcdef9;
+}
+div.root {
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+div.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+div.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    gap: 10px;
+}
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+input[type="text"] {
+    width: 400px;
+}
+input[type="number"] {
+    width: 30px;
+}
