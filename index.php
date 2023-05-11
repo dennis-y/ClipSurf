@@ -35,14 +35,6 @@
             <?php
                 require_once 'functions.php';
 
-                global $DEFAULT_COLUMNS;
-                $numColumns = $DEFAULT_COLUMNS;
-                if (isset($_GET['columns'])) {
-                    $numColumns = intval($_GET['columns']);
-                }
-
-                $generateThumbnails = true;
-
                 $directory = $_SERVER['DOCUMENT_ROOT'] . '/' . getFromQueryStringOrDie('folder');
                 $lastChar = substr($directory, -1);
                 if ($lastChar !== '/' && lastChar !== '\\') {
@@ -51,12 +43,16 @@
                 if (!is_dir($directory)) {
                     exit("Directory not found: " . $directory);
                 }
-
-                $mediaInfoList = createMediaInfoList($directory);
-                if ($generateThumbnails) {
-                    $thumbDir = $directory . '__thumbs/';
-                    $mediaInfoList = addThumbnails($mediaInfoList, $thumbDir);
+                
+                global $DEFAULT_COLUMNS;
+                $numColumns = $DEFAULT_COLUMNS;
+                if (isset($_GET['columns'])) {
+                    $numColumns = intval($_GET['columns']);
                 }
+                
+                $mediaInfoList = createMediaInfoList($directory);
+                $thumbDir = $directory . '__thumbs/';
+                $mediaInfoList = addThumbnails($mediaInfoList, $thumbDir);
                 sortInPlaceByModifiedTimeNewestFirst($mediaInfoList);
                 $columns = splitIntoColumns($mediaInfoList, $numColumns);
 
