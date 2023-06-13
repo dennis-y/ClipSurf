@@ -37,7 +37,7 @@
 
                 $directory = $_SERVER['DOCUMENT_ROOT'] . '/' . getFromQueryStringOrDie('folder');
                 $lastChar = substr($directory, -1);
-                if ($lastChar !== '/' && lastChar !== '\\') {
+                if ($lastChar !== '/' && $lastChar !== '\\') {
                     $directory .= '/';
                 }
                 if (!is_dir($directory)) {
